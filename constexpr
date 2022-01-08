@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+//static degiskenler constexpr fonksiyonlarda kullanilamaz
+//constexpr compile time sabiti olusturur, const ise degerin degismeyecegi anlamina gelir
+
+constexpr int square(int a) { //oneliner function
+    return a*a;
+}
+
+constexpr int get_prime(int z)  {
+    constexpr int t[] = {0, 2, 3, 5, 7, 11, 13, 17, 19, 23};
+    
+    return t[z];
+}
+
+int main() {
+    constexpr int x = 5; //constexpr ifadenin sbt oldugunun guvencesini veriyor
+    constexpr int y = 6;
+    square(x);
+    square(9);
+
+
+    square(x*y+4);  // bu ifade sbt degerdir
+
+    cout << "value of x: "<<x<<endl;
+
+    return 0;
+}
