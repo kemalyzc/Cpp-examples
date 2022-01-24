@@ -17,7 +17,7 @@ int main()  {
     string ccNumber;
 
     cout << " \t\t\t****//// WELCOME CREDIT CARD NUMBER VALIDITY PROGRAM \\\\**** " <<endl;
-    cout << " \nYou can press to 'enter' for exit" << endl;
+    cout << " \nYou can enter 'exit' for anytime quit" << endl;
 
     while (true) {
 
@@ -25,7 +25,6 @@ int main()  {
         cin >> ccNumber;
 
         if (ccNumber == "exit")
-
                 break;
 
         else if (!isNumberString(ccNumber)) {
