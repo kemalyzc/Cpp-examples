@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Car {
+public :
+    string brand;
+    string model;
+    int year;
+    double hp;
+    Car(string x,string y, int z, double t); //ctor declaration
+
+    Car () {      //default ctor
+        brand ="None";
+        model ="None";
+        year = 0;
+        hp = 0;
+    }
+    Car(const Car& car1) {brand = car1.brand; model = car1.model; year =car1.year; hp = car1.hp;} //copy ctor
+
+};
+
+    Car::Car(string x, string y, int z, double t)   {
+        brand =x;
+        model =y;
+        year =z;
+        hp =t;
+    }
+
+
+int main()  {
+
+    Car car0;
+    Car car1 ("Mercedes-Benz","c63 AMG",2020,503);
+    Car car2 ("Seat","Ibiza",2015,84);
+    Car car3=car1;
+
+
+    cout << "Brand :" << car1.brand << " Model : " <<car1.model << " Year : " << car1.year << " HP : " << car1.hp<<endl;
+    cout << "Brand :" << car3.brand << " Model : " <<car3.model << " Year : " << car3.year << " HP : " << car3.hp<<endl;
+    cout << car2.brand << car2.model << car2.year << car2.hp <<endl;
+    return 0;
+}
