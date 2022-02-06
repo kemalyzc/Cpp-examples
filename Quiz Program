@@ -1,0 +1,149 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int Guess;
+int Total;
+
+class Question  {
+private:
+    string Question_Text;
+    string Answer_1;
+    string Answer_2;
+    string Answer_3;
+    string Answer_4;
+
+    int Correct_Answer;
+    int Question_Score;
+public:
+    void setValues (string, string, string, string, string, int, int);
+    void askQuestion();
+};
+
+void Question::setValues(string q, string a1, string a2, string a3, string a4, int ca, int qs)
+{
+    Question_Text =q;
+    Answer_1 = a1;
+    Answer_2 = a2;
+    Answer_3 = a3;
+    Answer_4 = a4;
+    Correct_Answer = ca;
+    Question_Score = qs;
+}
+
+void Question::askQuestion()
+{
+    cout << endl;
+    cout << Question_Text<<endl;
+    cout << "1. "<< Answer_1 <<endl;
+    cout << "2. "<< Answer_2 <<endl;
+    cout << "3. "<< Answer_3 <<endl;
+    cout << "4. "<< Answer_4 <<endl;
+    cout << endl;
+
+    cout << "What is your answer ?" <<endl;
+    cin >> Guess;
+    if(Guess==Correct_Answer)
+    {
+        cout << endl;
+        cout << "Great! You are correct." <<endl;
+        Total = Total + Question_Score;
+        cout << "Score: " << Question_Score << " Out of " << Total << "!"<<endl;
+        cout << endl;
+    }
+    else
+    {
+        cout << endl;
+        cout << "Nope. You are wrong." << endl;
+        cout << "Score: "<<Total<<" Out of " << Total+20 <<"!"<<endl;
+        cout << "The correct answer is " << Correct_Answer << "."<<endl;
+        cout << endl;
+    }
+}
+
+
+int main()
+{
+    cout << "\t\t\t*********************************************************" << endl;
+    cout << " \t\t\t*\t\tWELCOME TO THE C++ QUIZ\t\t\t* " << endl;
+    cout << " \t\t\t*\t-----------------------------------------\t* " << endl;
+    cout << " \t\t\t*\t\t\t\t\t\t\t* " << endl;
+    cout << " \t\t\t*\t\t\t By \t\t\t\t* " << endl;
+    cout << " \t\t\t*\t\t\t\t\t\t\t* " << endl;
+    cout << " \t\t\t*\t\t\t\t\t\t\t* " << endl;
+    cout << " \t\t\t*\t\t\t\t\t\t\t* " << endl;
+    cout << " \t\t\t*\t\t      Kemal YAZICI\t\t\t*" <<endl;
+    cout << " \t\t\t*\t\t\t\t\t\t\t* " << endl;
+    cout << " \t\t\t********************************************************* " << endl;
+
+    cout << "Press enter to start the quiz ..."<<endl;
+    cin.get();
+
+    string Name;
+    int Age;
+    string Respond;
+    cout <<" What's your name? " <<endl;
+    cin>>Name;
+    cout<<endl;
+    cout <<" How old are you?" <<endl;
+    cin>>Age;
+    cout<<endl;
+    cout << " Are you ready to take the quiz " << Name << "? Yes/No"<<endl;
+    cin >>Respond;
+    if (Respond == "yes")
+    {
+        cout <<endl;
+        cout << "OK. Good Luck!"<<endl;
+        cout <<endl;
+
+    }
+        else
+    {
+        cout << "OK. Goodbye"<<endl;
+        return 0;
+    }
+
+    Question q1;
+    Question q2;
+    Question q3;
+    Question q4;
+    Question q5;
+
+    q1.setValues("What is mentioned in the second law of thermodynamics?","Energy conservation","Thermodynamic equilibrium ","Entropy","Convergence to absolute zero ",3,20);
+    q2.setValues("Where and when was the Magna Carta signed, the agreement in which the king renounced some of his powers, acted in accordance with the law, and accepted that the law was superior to his wishes and desires?","France 1789","England 1215","Italy 1479","Ottoman Empire 1808",2,20);
+    q3.setValues("Which of the following is called the geographical area in which the stream flows, which has a continuous descent from the source to the mouth and can be between a few kilometers and thousands of kilometers?","Plateau","Mushroom rock","Travertine","Valley",4,20);
+    q4.setValues("What is the short name of the organization established by oil exporting countries to meet price stability and supply demand?","OPEC","OECD","UNESCO","UNICEF",1,20);
+    q5.setValues("Who is the famous director of The Prestige, Inception, Interstellar movies?","David Fincher","Martin Scorsese","Cristopher Nolan","Stanley Kubrick",3,20);
+
+
+
+
+
+    q1.askQuestion();
+    q2.askQuestion();
+    q3.askQuestion();
+    q4.askQuestion();
+    q5.askQuestion();
+
+
+
+
+    cout << "Your total score is: " << Total << " out of 100" <<endl;
+    cout<<endl;
+
+    if (Total >=60)
+    {
+        cout << "Perfect ! You passed the quiz."<<endl;
+        cout << endl;
+    }
+    else
+    {
+        cout << "Upps. you cannot success the quiz." << endl;
+        cout << endl;
+        cout << "Better luck next time"<<endl;
+        return 0;
+    }
+
+    return 0;
+}
