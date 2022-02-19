@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+class myClass   {
+public:
+    const static int sx = 12;
+    constexpr static int sy = 10; // run-time yukunu azaltmak icin compile-time'a yük bindirilebilir
+    const static double sd; // burada declaration yapilmalidir, const static degiskenleri once bildirip sonra tanımlamakta fayda var
+    constexpr static double st = 1.2;
+};
+
+const double myClass::sd =1.2;
+
+int main()
+{
+    myClass m1;
+
+    cout << "sx value: " << m1.sx << endl;
+    cout << "sy value: " << m1.sy << endl;
+    cout << "sd value: " << m1.sd << endl;
+    cout << "st value: " << m1.st << endl;
+    
+    return 0;
+}
