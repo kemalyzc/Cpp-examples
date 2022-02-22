@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "\t\t*****************\tPalindrome Function Program by Kemal\t*****************";
+    while(1){
+    int n, r, temp;
+    int sum = 0;
+    cout << "\nEnter the number: ";
+    cin >> n;
+    temp = n;
+
+    while( n > 0)   {
+        r = n%10;
+        sum = (sum*10)+r;
+        n = n/10;
+    }
+
+    if( temp == sum)
+        cout << "Number is Palindrome.";
+    else
+        cout << "Number is not Palindrome.";
+    }
+    return 0;
+}
