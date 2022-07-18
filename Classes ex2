@@ -1,0 +1,60 @@
+#include<iostream>
+
+using namespace std;
+
+class Footballer {
+    public:
+    string name;
+    string club;
+    int age;
+    double skill;
+    
+    Footballer(string x, string y, int z, double t); //ctor parametrized
+    
+    Footballer() {
+        name = "None";
+        club = "None";
+        age = 0;
+        skill = 0;
+        
+    }
+    
+    Footballer(const Footballer& footballer1) {name = footballer1.name;
+    club = footballer1.club;
+    age = footballer1.age;
+    skill = footballer1.skill;
+} //copy ctor
+
+};
+
+    Footballer::Footballer(string x, string y, int z, double t) {
+    name = x;
+    club = y;
+    age = z;
+    skill = t;
+}
+
+
+int main()
+{
+    
+    Footballer futbolcu0;
+    Footballer futbolcu1 ("Kemal", "Fenerbahce", 23, 95);
+    Footballer futbolcu2 ("Ronaldo", "ManU", 37, 92);
+    Footballer futbolcu3 = futbolcu2;
+    Footballer futbolcu4 ("Messi", "PSG", 35, 93);
+    
+    
+    cout << "Name: " << futbolcu1.name << " Club: " << futbolcu1.club << " Age: " << futbolcu1.age << " Skill:" << futbolcu1.skill << "\n";
+    cout << "Name: " << futbolcu3.name << " Club: " << futbolcu3.club << " Age: " << futbolcu3.age << " Skill:" << futbolcu3.skill << "\n";
+    
+    cout << futbolcu2.name << futbolcu2.club << futbolcu2.age << futbolcu2.skill << "\n";
+    
+    cout << "Name: " << futbolcu4.name << "  Club: " << futbolcu4.club << "  Age: " << futbolcu4.age << "  Skill: " << futbolcu4.skill << "\n";
+    
+   
+   
+    
+    
+    return 0;
+}
