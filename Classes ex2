@@ -19,7 +19,8 @@ class Footballer {
         
     }
     
-    Footballer(const Footballer& footballer1) {name = footballer1.name;
+    Footballer(const Footballer& footballer1) {
+    name = footballer1.name;
     club = footballer1.club;
     age = footballer1.age;
     skill = footballer1.skill;
