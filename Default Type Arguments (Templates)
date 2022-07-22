@@ -1,0 +1,22 @@
+#include<iostream>
+
+using namespace std;
+
+template <typename T = long, typename U = T*>
+class myClass {
+    public:
+    myClass() {
+        cout << typeid (*this).name() << "\n";
+    }
+};
+
+
+int main()
+{
+
+    myClass <double> mx; // type of mx is double, double*
+    myClass <double, int> my; // type of my is double, int
+    myClass <long> mz; // type of mz is long, long*
+    
+    return 0;
+}
