@@ -1,0 +1,26 @@
+#include<iostream>
+
+using namespace std;
+
+// call by value
+
+void change (int data);
+
+
+int main()
+{
+    
+    int data = 10;
+    change(data);
+    
+    cout << "Value of the data is: " << data << "\n";
+    
+    
+    
+    return 0;
+}
+
+
+void change(int data)  {
+    data = 3;
+}  // if it is being call by value it doesnt change this value
