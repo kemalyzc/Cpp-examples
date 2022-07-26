@@ -1,0 +1,26 @@
+#include<iostream>
+
+using namespace std;
+
+// call by reference
+
+void swap(int *x, int *y) {
+    int swap;
+    swap = *x;
+    *x = *y;
+    *y = swap;
+}
+
+
+int main()
+{
+    int x = 25;
+    int y = 100;
+    
+    swap(&x, &y); // passing value to function
+    cout << "Value of x is: " << x << "\n";
+    cout << "Value of y is: " << y << "\n";
+    
+    
+    return 0;
+}
