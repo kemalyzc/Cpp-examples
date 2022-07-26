@@ -17,7 +17,7 @@ void intro() {
 	cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°";
 	cout<<"||\t\t\t\t\t\t\t\t\t      ||";
 	cout<<"||\t\t\t\t\t\t\t\t\t      ||";
-	cout<<"||\t\t\t\tDaljeet Singh Chhabra\t\t\t      ||";
+	cout<<"||\t\t\t\tKemal & Umut\t\t\t      ||";
 	cout<<"||\t\t\t\t\t\t\t\t\t      ||";
 	cout<<"||\t\t\t\t\t  \t\t\t\t      ||";
 	cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°";
@@ -321,10 +321,10 @@ int main()
 	cout<<"\n\n\t";
 	time();
 	cout<<"\t";
-	if(strcmp(id,"admin")==0&&strcmp(pass,"******")==0)
-		cout<<"\n\n\t\t\t  !!!Login Successfull!!!";
+	if(strcmp(id,"admin") == 0 && strcmp(pass,"******") == 0)
+		cout<<"\n\n\t\t\tLogin Successfull!!!";
 	else {
-		cout<<"\n\n\t\t\t!!!INVALID CREDENTIALS!!!";
+		cout<<"\n\n\t\t\tINVALID CREDENTIALS!!!";
 		getch();
 		exit(-1);
 	}
